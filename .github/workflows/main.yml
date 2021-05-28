@@ -45,7 +45,7 @@ jobs:
      #   run: mvn -B package --file pom.xml
         
       - name: Make zip file
-        run: zip -qq -r ./$GITHUB_SHA.zip .
+        run: zip -qq -r ./$GITHUB_SHA.zip . 
         shell: bash 
   
       # Runs a set of commands using the runners shell
