@@ -9,9 +9,11 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+  
+env :
+  AWS_REGION: ap-northeast-2
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -52,7 +54,7 @@ jobs:
         with:
           aws-access-key-id: $
           aws-secret-access-key: $
-          aws-region: $
+          aws-region: ${{ env.AWS_REGION }}
           
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://isntyet-deploy/$PROJECT_NAME/$GITHUB_SHA.zip
