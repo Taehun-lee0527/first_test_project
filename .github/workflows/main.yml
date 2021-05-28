@@ -45,7 +45,7 @@ jobs:
         
       - name: Make zip file
         run: zip -qq -r ./$GITHUB_SHA.zip .
-        shell: bash
+        shell: bash 
         
       - name: Configure AWS credintials
         uses: aws-actions/configure-aws-credentials@v1
