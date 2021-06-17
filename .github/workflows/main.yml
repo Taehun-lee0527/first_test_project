@@ -61,14 +61,14 @@ jobs:
           aws-region: ap-northeast-2
           
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://testbucket210528/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://timsedubucket/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
         run: aws deploy create-deployment 
-             --application-name testapp
+             --application-name tims-edu
              --deployment-config-name CodeDeployDefault.OneAtATime
              --deployment-group-name dev 
-             --s3-location bucket=testbucket210528,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+             --s3-location bucket=timsedubucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
   
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
