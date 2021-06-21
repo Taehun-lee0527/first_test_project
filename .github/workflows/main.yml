@@ -65,7 +65,7 @@ jobs:
         run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://centostimsedubucket/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
-        run: aws deploy create-deployment  #--application-name tims-edu
+        run: aws deploy create-deployment
              --application-name centos_tims_edu
              --deployment-config-name CodeDeployDefault.OneAtATime
              --deployment-group-name dev 
