@@ -3,7 +3,7 @@
 name: CI
 
 env:
-  PROJECT_NAME: first_test_project
+  PROJECT_NAME: first_test_project 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
