@@ -69,7 +69,7 @@ jobs:
              --application-name centos_tims_edu
              --deployment-config-name CodeDeployDefault.OneAtATime
              --deployment-group-name dev 
-             --s3-location bucket=timsedubucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+             --s3-location bucket=centostimsedubucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
   
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
